@@ -11,34 +11,34 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm">
+    <div className="min-h-screen">
+      <nav className="sticky top-0 z-50 bg-white/30 backdrop-blur-md border-b border-white/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Link to="/" className="text-2xl font-bold text-indigo-600">
+              <Link to="/" className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
                 CollabHub
               </Link>
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className="ml-10 flex items-baseline space-x-6">
                 <Link
                   to="/"
-                  className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-800 hover:text-indigo-600 hover:bg-white/40 px-3 py-2 rounded-lg text-sm font-medium transition-all"
                 >
                   Dashboard
                 </Link>
                 <Link
                   to="/projects/new"
-                  className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-800 hover:text-indigo-600 hover:bg-white/40 px-3 py-2 rounded-lg text-sm font-medium transition-all"
                 >
                   Create Project
                 </Link>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-700 text-sm">{user?.email}</span>
+              <span className="text-gray-800 text-sm font-medium">{user?.email}</span>
               <button
                 onClick={handleSignOut}
-                className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md text-sm font-medium"
+                className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-5 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
               >
                 Sign Out
               </button>
@@ -46,7 +46,7 @@ export default function Layout({ children }) {
           </div>
         </div>
       </nav>
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <main className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         {children}
       </main>
     </div>
