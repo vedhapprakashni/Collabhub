@@ -17,7 +17,7 @@ export default function Login() {
       await signInWithGoogle()
     } catch (error) {
       console.error('Error signing in:', error)
-      alert('Failed to sign in. Please try again.')
+      alert(error.message || 'Failed to sign in. Please try again.')
     }
   }
 
